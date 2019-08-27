@@ -1,0 +1,49 @@
+﻿<Window x:Class="Cinema_Administrator.XMLWork"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cinema_Administrator"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+         Title="XML"  Height="500" Width="600"  ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Canvas>
+        <Canvas.Background>
+            <LinearGradientBrush>
+                <LinearGradientBrush.GradientStops>
+                    <GradientStop Offset="0.00" Color="White" />
+                    <GradientStop Offset="0.25" Color="LightSteelBlue" />
+                    <GradientStop Offset="0.50" Color="LightBlue" />
+                    <GradientStop Offset="0.75" Color="LightSteelBlue" />
+                    <GradientStop Offset="1.00" Color="AliceBlue" />
+                </LinearGradientBrush.GradientStops>
+            </LinearGradientBrush>
+        </Canvas.Background>
+        <Label Content="Ввести информацию о кинотеатре из XML файла" FontFamily="Comic Sans MS" FontSize="17" Height="40" Width="450" Canvas.Top="10" HorizontalContentAlignment="Center" Background="{x:Null}" Foreground="DarkBlue" BorderThickness="0"/>
+        <TextBlock Name="Path" Text="путь..." FontFamily="Comic Sans MS" FontSize="15" TextWrapping="Wrap" Height="70" Width="300" Canvas.Top="70" Canvas.Left="20" Foreground="DarkBlue" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button Content="ПУТЬ" FontFamily="Comic Sans MS" FontSize="16"  FontWeight="Bold"  Height="40" Width="100" Canvas.Top="80" Canvas.Left="400" Foreground="DarkBlue" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ChoosePathOfXML"/>
+        <Button Name="AddFromXML" Content="ИЗ XML" FontFamily="Comic Sans MS" FontSize="16" FontWeight="Bold"  Height="40" Width="170" Canvas.Top="160" Canvas.Left="220" Foreground="DarkBlue" IsEnabled="False" Click="AddCinemaFromXLMFile" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+
+        <Label Content="Ввести информацию о кинотеатре в XML файл" FontFamily="Comic Sans MS" FontSize="17" Height="40" Width="450" Canvas.Top="240" HorizontalContentAlignment="Center" Background="{x:Null}" Foreground="DarkBlue" BorderThickness="0"/>
+        <TextBlock Name="PathIn" Text="путь..." FontFamily="Comic Sans MS" FontSize="15" TextWrapping="Wrap" Height="70" Width="300" Canvas.Top="300" Canvas.Left="20" Foreground="DarkBlue" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button Content="ПУТЬ" FontFamily="Comic Sans MS" FontSize="16"  FontWeight="Bold"  Height="40" Width="100" Canvas.Top="310" Canvas.Left="400" Foreground="DarkBlue" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ChoosePathToXML"/>
+        <Button Name="AddInXML" Content="В XML" FontFamily="Comic Sans MS" FontSize="16" FontWeight="Bold" Height="40" Width="170" Canvas.Top="390" Canvas.Left="220" Foreground="DarkBlue" IsEnabled="False" Click="OnExportToXML" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+
+        <materialDesign:PackIcon Kind="ArrowLeftBoldBoxOutline" Height="45" Width="100" Canvas.Top="390" Canvas.Left="465" MouseDoubleClick="PackIcon_MouseDoubleClick" Foreground="DodgerBlue"/>
+    </Canvas>
+</Window>
+
+<!--<GroupBox Header="From XML File" Width="400" Height="200" Margin="0,0,293.333,270.667">
+            <Grid>
+                <TextBlock Name="Path" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="path..." VerticalAlignment="Top" Height="54" Width="225" FontSize="14"/>
+                <Button Background="#FF6B1D78" Foreground="#FFEB77FF" Content="PATH" HorizontalAlignment="Left" Margin="240,10,0,0" VerticalAlignment="Top" Width="69" Height="25" Click="ChoosePathOfApartXML"/>
+                <Button Name="AddApartXML" Background="#FF6B1D78" Foreground="#FFEB77FF" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" Content="ADD" Margin="75,79,74,0" IsEnabled="False" Click="AddApartmentsFromXLMFile" Height="40" VerticalAlignment="Top"/>
+            </Grid>
+        </GroupBox>-->
+<!--<GroupBox Header="Export today ordered apartments to XML" Margin="346,220,9,10">
+            <Grid>
+                <TextBlock Name="Path2" FontWeight="Bold" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="path..." VerticalAlignment="Top" Height="54" Width="225"/>
+                <Button Background="#FF6B1D78" Foreground="#FFEB77FF" Content="PATH" HorizontalAlignment="Left" Margin="240,10,0,0" VerticalAlignment="Top" Width="69" Height="25" Click="ChooseApartToExport"/>
+                <Button Name="ExportToXML" Background="#FF6B1D78" Foreground="#FFEB77FF" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" Content="ADD" Margin="75,79,74,0" IsEnabled="False" Click="OnExportToXML" Height="40" VerticalAlignment="Top"/>
+            </Grid>
+        </GroupBox>-->

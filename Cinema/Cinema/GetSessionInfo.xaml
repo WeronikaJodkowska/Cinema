@@ -1,0 +1,41 @@
+﻿<Window x:Class="Cinema.GetSessionInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cinema"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+       Title="Сеансы" Height="600" WindowStartupLocation="CenterScreen" Width="730" HorizontalAlignment="Center">
+    <Canvas>
+        <Canvas.Background>
+            <LinearGradientBrush>
+                <LinearGradientBrush.GradientStops>
+                    <GradientStop Offset="0.00" Color="White" />
+                    <GradientStop Offset="0.25" Color="LightSteelBlue" />
+                    <GradientStop Offset="0.50" Color="LightBlue" />
+                    <GradientStop Offset="0.75" Color="LightSteelBlue" />
+                    <GradientStop Offset="1.00" Color="AliceBlue" />
+                </LinearGradientBrush.GradientStops>
+            </LinearGradientBrush>
+        </Canvas.Background>
+        <Label Content="Введите дату" BorderThickness="0" FontFamily="Comic Sans MS" FontSize="18" Height="40" HorizontalContentAlignment="Center" Canvas.Top="430" Width="250" Canvas.Left="10" Background="{x:Null}" Foreground="DarkBlue" />
+        <DatePicker Height="40" Width="250" Canvas.Left="10" FontFamily="Comic Sans MS" FontSize="20" Name="Date" Text="" Foreground="DarkBlue" Canvas.Top="476" IsEnabled="True" BorderBrush="DarkBlue" Background="{x:Null}" />
+        <GroupBox FontWeight="Bold" FontSize="16" Foreground="#FFEB77FF" Header="Информация о сеансах" HorizontalAlignment="Left" Height="400" VerticalAlignment="Top" Width="700" Margin="10,10,0,0">
+            <Grid>
+                <DataGrid x:Name="Session" HorizontalAlignment="Right" VerticalAlignment="Top" Height="359" Width="700" AutoGenerateColumns="False" IsReadOnly="True" Margin="-7,-8,-0.333,-8.333">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Фильм" Width="Auto" Binding="{Binding Path=Movie }"/>
+                        <DataGridTextColumn Header="Зал" Width="Auto" Binding="{Binding Path=Hall}"/>
+                        <DataGridTextColumn Header="Дата" Width="Auto" Binding="{Binding Path=Date,  StringFormat=dd-MM-yyyy}"/>
+                        <DataGridTextColumn Header="Время" Width="Auto" Binding="{Binding Path=Time}"/>
+                        <DataGridTextColumn Header="Свободные места" Width="Auto" Binding="{Binding Path=FreeSeats}"/>
+                        <DataGridTextColumn Header="Стоимость билета (бел. руб.)" Width="Auto" Binding="{Binding Path=Cost}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </GroupBox>
+        <Button Click="LoadSession_Click" Canvas.Top="539" Width="723"/>
+        <materialDesign:PackIcon Kind="ArrowLeftBoldBoxOutline" Height="45" Width="80" Canvas.Top="489" Canvas.Left="633" MouseDoubleClick="PackIcon_MouseDoubleClick" Foreground="DodgerBlue"/>
+    </Canvas>
+</Window>

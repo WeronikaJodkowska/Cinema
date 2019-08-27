@@ -1,0 +1,42 @@
+﻿<Window x:Class="Cinema.GetCinemaInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cinema"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Кинотеатры" Height="600" Width="1100" WindowStartupLocation="CenterScreen" HorizontalAlignment="Center">
+    <Canvas>
+        <Canvas.Background>
+            <LinearGradientBrush>
+                <LinearGradientBrush.GradientStops>
+                    <GradientStop Offset="0.00" Color="White" />
+                    <GradientStop Offset="0.25" Color="LightSteelBlue" />
+                    <GradientStop Offset="0.50" Color="LightBlue" />
+                    <GradientStop Offset="0.75" Color="LightSteelBlue" />
+                    <GradientStop Offset="1.00" Color="AliceBlue" />
+                </LinearGradientBrush.GradientStops>
+            </LinearGradientBrush>
+        </Canvas.Background>
+        <Label Content="Введите название кинотеатра" BorderThickness="0" FontFamily="Comic Sans MS" FontSize="18" Height="40" HorizontalContentAlignment="Center" Canvas.Top="10" Width="274" Canvas.Left="10" Background="{x:Null}" Foreground="DarkBlue" />
+
+        <ComboBox Name="Name" FontFamily="Comic Sans MS" FontSize="15" Height="40" Width="400" Canvas.Top="10" Canvas.Left="284" Foreground="DarkBlue" BorderBrush="DarkBlue" />
+        <GroupBox FontWeight="Bold" FontSize="16" Foreground="#FFEB77FF" Header="Инофрмация о кинотеатрах" HorizontalAlignment="Left" Height="400" VerticalAlignment="Top" Width="1073" Canvas.Top="134" Canvas.Left="10">
+            <Grid>
+                <DataGrid x:Name="Cinema" HorizontalAlignment="Right" VerticalAlignment="Top" Height="359" Width="1062" AutoGenerateColumns="False" IsReadOnly="True" Margin="-7,-8,-0.333,-8.333">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Название" Width="Auto" Binding="{Binding Path=Name }"/>
+                        <DataGridTextColumn Header="Адрес" Width="Auto" Binding="{Binding Path=Address}"/>
+                        <DataGridTextColumn Header="Сайт" Width="Auto" Binding="{Binding Path=Website}"/>
+                        <DataGridTextColumn Header="Район" Width="Auto" Binding="{Binding Path=Region}"/>
+                        <DataGridTextColumn Header="Количество залов" Width="Auto" Binding="{Binding Path=Number}"/>
+                        <DataGridTextColumn Header="Билетные кассы" Width="Auto" Binding="{Binding Path=Ticket}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </GroupBox>
+        <Button Click="LoadCinema_Click" Canvas.Top="539" Width="1093"/>
+        <materialDesign:PackIcon Kind="ArrowLeftBoldBoxOutline" Height="45" Width="80" Canvas.Top="10" Canvas.Left="1003" MouseDoubleClick="PackIcon_MouseDoubleClick" Foreground="DodgerBlue"/>
+    </Canvas>
+</Window>

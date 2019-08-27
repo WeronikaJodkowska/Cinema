@@ -1,0 +1,78 @@
+﻿<Window x:Class="Cinema.Ticket_order"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cinema"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Заказать билеты"  Height="700" Width="800"  ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Canvas>
+            <Canvas.Background>
+                <LinearGradientBrush>
+                    <LinearGradientBrush.GradientStops>
+                        <GradientStop Offset="0.00" Color="White" />
+                        <GradientStop Offset="0.25" Color="LightSteelBlue" />
+                        <GradientStop Offset="0.50" Color="LightBlue" />
+                        <GradientStop Offset="0.75" Color="LightSteelBlue" />
+                        <GradientStop Offset="1.00" Color="AliceBlue" />
+                    </LinearGradientBrush.GradientStops>
+                </LinearGradientBrush>
+            </Canvas.Background>
+
+            <Label Content="Заказ билетов" FontFamily="Comic Sans MS" FontSize="20" Height="40" Width="370" Canvas.Top="10" Canvas.Left="100" HorizontalContentAlignment="Center" Background="{x:Null}" Foreground="DarkBlue" BorderThickness="0"/>
+            <Label Content="Фильм" FontFamily="Comic Sans MS" FontSize="20" Height="40" Width="200" Canvas.Top="50" Canvas.Left="180" HorizontalContentAlignment="Center" Background="{x:Null}" Foreground="DarkBlue" BorderThickness="0"/>
+            <ComboBox Name="Movie" FontFamily="Comic Sans MS" FontSize="15" Height="40" Width="400" Canvas.Top="85" Canvas.Left="100" Foreground="DarkBlue" BorderBrush="DarkBlue" />
+            <Label Content="Пароль для покупки" FontFamily="Comic Sans MS" FontSize="20" Height="40" Width="211" Canvas.Top="410" Canvas.Left="71" HorizontalContentAlignment="Center" Background="{x:Null}" Foreground="DarkBlue" BorderThickness="0"/>
+            <TextBox Name="Pass" FontFamily="Comic Sans MS" FontSize="15" TextWrapping="Wrap" Height="40" Width="200" Canvas.Top="410" Canvas.Left="300" Foreground="DarkBlue" BorderBrush="DarkBlue" />
+            <Label Content="Кинотеатр" FontFamily="Comic Sans MS" FontSize="20" Height="40" Width="220" Canvas.Top="130" Canvas.Left="180" HorizontalContentAlignment="Center" Background="{x:Null}" Foreground="DarkBlue" BorderThickness="0"/>
+            <ComboBox Name="Cinema" FontFamily="Comic Sans MS" FontSize="15" Height="40" Width="400" Canvas.Top="170" Canvas.Left="100" Foreground="DarkBlue" BorderBrush="DarkBlue" />
+            <Label Content="Зал" FontFamily="Comic Sans MS" FontSize="20" Height="40" Width="200" Canvas.Top="210" Canvas.Left="180" HorizontalContentAlignment="Center" Background="{x:Null}" Foreground="DarkBlue" BorderThickness="0"/>
+            <ComboBox Name="Hall" FontFamily="Comic Sans MS" FontSize="15" Height="40" Width="400" Canvas.Top="250" Canvas.Left="100" Foreground="DarkBlue" BorderBrush="DarkBlue"/>
+            <Label Content="Дата сеанса" FontFamily="Comic Sans MS" FontSize="20" Height="40" Width="200" Canvas.Top="295" Canvas.Left="100" HorizontalContentAlignment="Center" Background="{x:Null}" Foreground="DarkBlue" BorderThickness="0"/>
+            <DatePicker Name="Date" FontFamily="Comic Sans MS" FontSize="15" Height="40" Width="200" Canvas.Top="295" Canvas.Left="300" Foreground="DarkBlue" BorderBrush="DarkBlue" />
+            <Label Content="Время" FontFamily="Comic Sans MS" FontSize="20" Height="40" Width="200" Canvas.Top="353" Canvas.Left="100" HorizontalContentAlignment="Center" Background="{x:Null}" Foreground="DarkBlue" BorderThickness="0"/>
+            <ComboBox Name="Time" FontFamily="Comic Sans MS" FontSize="15" Height="40" Width="200" Canvas.Top="353" Canvas.Left="300" Foreground="DarkBlue" BorderBrush="DarkBlue"/>
+            <Label Content="Цена" FontFamily="Comic Sans MS" FontSize="20" Height="40" Width="200" Canvas.Top="529" Canvas.Left="100" HorizontalContentAlignment="Center" Background="{x:Null}" Foreground="DarkBlue" BorderThickness="0"/>
+            <TextBox Name="Price" FontFamily="Comic Sans MS" FontSize="15" TextWrapping="Wrap" Height="40" Width="80" Canvas.Top="529" Canvas.Left="300" Foreground="DarkBlue" BorderBrush="DarkBlue" />
+            <Label Content="руб." FontFamily="Comic Sans MS" FontSize="20" Height="40" Width="100" Canvas.Top="527" Canvas.Left="385" HorizontalContentAlignment="Center" Background="{x:Null}" Foreground="DarkBlue" BorderThickness="0"/>
+            <Label Content="Свободно" FontFamily="Comic Sans MS" FontSize="20" Height="40" Width="150" Canvas.Top="463" Canvas.Left="122" HorizontalContentAlignment="Center" Background="{x:Null}" Foreground="DarkBlue" BorderThickness="0"/>
+            <TextBox Name="Seats" FontFamily="Comic Sans MS" FontSize="15" TextWrapping="Wrap" Height="40" Width="80" Canvas.Top="464" Canvas.Left="300" Foreground="DarkBlue" BorderBrush="DarkBlue" />
+            <Label Content="мест" FontFamily="Comic Sans MS" FontSize="20" Height="40" Width="100" Canvas.Top="464" Canvas.Left="385" HorizontalContentAlignment="Center" Background="{x:Null}" Foreground="DarkBlue" BorderThickness="0"/>
+
+            <Label FontFamily="Comic Sans MS" FontSize="17" Height="75" Width="240" Canvas.Left="528" HorizontalContentAlignment="Center" Background="{x:Null}" Foreground="DarkBlue" BorderThickness="0">
+                <TextBlock TextWrapping="Wrap"><Run Text="Выберите ряд и место "/><LineBreak/><Run Text="(максимум 10 билетов)"/></TextBlock>
+            </Label>
+
+            <Label Content="Ряд" FontFamily="Comic Sans MS" FontSize="17" Height="40" Width="80" Canvas.Top="66" Canvas.Left="550" HorizontalContentAlignment="Center" Background="{x:Null}" Foreground="DarkBlue" BorderThickness="0"/>
+            <Label Content="Место" FontFamily="Comic Sans MS" FontSize="17" Height="40" Width="80" Canvas.Top="66" Canvas.Left="650" HorizontalContentAlignment="Center" Background="{x:Null}" Foreground="DarkBlue" BorderThickness="0"/>
+
+            <TextBox Name="Row1" IsEnabled="True" FontFamily="Comic Sans MS" FontSize="15" TextWrapping="Wrap" Height="40" Width="80" Canvas.Top="90" Canvas.Left="550" Foreground="DarkBlue" BorderBrush="DarkBlue" />
+            <TextBox Name="Seat1" IsEnabled="True" FontFamily="Comic Sans MS" FontSize="15" TextWrapping="Wrap" Height="40" Width="80" Canvas.Top="90" Canvas.Left="650" Foreground="DarkBlue" BorderBrush="DarkBlue" />
+            <TextBox Name="Row2" IsEnabled="True" FontFamily="Comic Sans MS" FontSize="15" TextWrapping="Wrap" Height="40" Width="80" Canvas.Top="130" Canvas.Left="550" Foreground="DarkBlue" BorderBrush="DarkBlue" />
+            <TextBox Name="Seat2" IsEnabled="True" FontFamily="Comic Sans MS" FontSize="15" TextWrapping="Wrap" Height="40" Width="80" Canvas.Top="130" Canvas.Left="650" Foreground="DarkBlue" BorderBrush="DarkBlue" />
+            <TextBox Name="Row3" IsEnabled="True" FontFamily="Comic Sans MS" FontSize="15" TextWrapping="Wrap" Height="40" Width="80" Canvas.Top="170" Canvas.Left="550" Foreground="DarkBlue" BorderBrush="DarkBlue" />
+            <TextBox Name="Seat3" IsEnabled="True" FontFamily="Comic Sans MS" FontSize="15" TextWrapping="Wrap" Height="40" Width="80" Canvas.Top="170" Canvas.Left="650" Foreground="DarkBlue" BorderBrush="DarkBlue" />
+            <TextBox Name="Row4" IsEnabled="True" FontFamily="Comic Sans MS" FontSize="15" TextWrapping="Wrap" Height="40" Width="80" Canvas.Top="210" Canvas.Left="550" Foreground="DarkBlue" BorderBrush="DarkBlue" />
+            <TextBox Name="Seat4" IsEnabled="True" FontFamily="Comic Sans MS" FontSize="15" TextWrapping="Wrap" Height="40" Width="80" Canvas.Top="210" Canvas.Left="650" Foreground="DarkBlue" BorderBrush="DarkBlue" />
+            <TextBox Name="Row5" IsEnabled="True" FontFamily="Comic Sans MS" FontSize="15" TextWrapping="Wrap" Height="40" Width="80" Canvas.Top="250" Canvas.Left="550" Foreground="DarkBlue" BorderBrush="DarkBlue" />
+            <TextBox Name="Seat5" IsEnabled="True" FontFamily="Comic Sans MS" FontSize="15" TextWrapping="Wrap" Height="40" Width="80" Canvas.Top="250" Canvas.Left="650" Foreground="DarkBlue" BorderBrush="DarkBlue" />
+            <TextBox Name="Row6" IsEnabled="True" FontFamily="Comic Sans MS" FontSize="15" TextWrapping="Wrap" Height="40" Width="80" Canvas.Top="290" Canvas.Left="550" Foreground="DarkBlue" BorderBrush="DarkBlue" />
+            <TextBox Name="Seat6" IsEnabled="True" FontFamily="Comic Sans MS" FontSize="15" TextWrapping="Wrap" Height="40" Width="80" Canvas.Top="290" Canvas.Left="650" Foreground="DarkBlue" BorderBrush="DarkBlue" />
+            <TextBox Name="Row7" IsEnabled="True" FontFamily="Comic Sans MS" FontSize="15" TextWrapping="Wrap" Height="40" Width="80" Canvas.Top="330" Canvas.Left="550" Foreground="DarkBlue" BorderBrush="DarkBlue" />
+            <TextBox Name="Seat7" IsEnabled="True" FontFamily="Comic Sans MS" FontSize="15" TextWrapping="Wrap" Height="40" Width="80" Canvas.Top="330" Canvas.Left="650" Foreground="DarkBlue" BorderBrush="DarkBlue" />
+            <TextBox Name="Row8" IsEnabled="True" FontFamily="Comic Sans MS" FontSize="15" TextWrapping="Wrap" Height="40" Width="80" Canvas.Top="370" Canvas.Left="550" Foreground="DarkBlue" BorderBrush="DarkBlue" />
+            <TextBox Name="Seat8" IsEnabled="True" FontFamily="Comic Sans MS" FontSize="15" TextWrapping="Wrap" Height="40" Width="80" Canvas.Top="370" Canvas.Left="650" Foreground="DarkBlue" BorderBrush="DarkBlue" />
+            <TextBox Name="Row9" IsEnabled="True" FontFamily="Comic Sans MS" FontSize="15" TextWrapping="Wrap" Height="40" Width="80" Canvas.Top="410" Canvas.Left="550" Foreground="DarkBlue" BorderBrush="DarkBlue" />
+            <TextBox Name="Seat9" IsEnabled="True" FontFamily="Comic Sans MS" FontSize="15" TextWrapping="Wrap" Height="40" Width="80" Canvas.Top="410" Canvas.Left="650" Foreground="DarkBlue" BorderBrush="DarkBlue" />
+            <TextBox Name="Row10" IsEnabled="True" FontFamily="Comic Sans MS" FontSize="15" TextWrapping="Wrap" Height="40" Width="80" Canvas.Top="450" Canvas.Left="550" Foreground="DarkBlue" BorderBrush="DarkBlue"/>
+            <TextBox Name="Seat10" IsEnabled="True" FontFamily="Comic Sans MS" FontSize="15" TextWrapping="Wrap" Height="40" Width="80" Canvas.Top="450" Canvas.Left="650" Foreground="DarkBlue" BorderBrush="DarkBlue" />
+
+            <Button Content ="Места" FontFamily="Comic Sans MS" Height="40" Width="75" Canvas.Top="464" Canvas.Left="42" Foreground="DarkBlue" Click="FreeSeats"/>
+            <Button Content ="Цена" FontFamily="Comic Sans MS" Height="40" Width="75" Canvas.Top="528" Canvas.Left="42" Foreground="DarkBlue" Click="SelectPrice"/>
+            <Button Content ="Заказать" FontFamily="Comic Sans MS" Height="40" Width="140" Canvas.Top="612" Canvas.Left="360" Foreground="DarkBlue" Click="Purchase"/>
+            <materialDesign:PackIcon Kind="ArrowLeftBoldBoxOutline" Height="50" Width="100" Canvas.Top="612" Canvas.Left="685" MouseDoubleClick="PackIcon_MouseDoubleClick" Foreground="DodgerBlue"/>
+        </Canvas>
+    </Grid>
+</Window>
